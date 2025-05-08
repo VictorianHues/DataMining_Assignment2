@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "src"
+version = "0.1"
+description = "Data Mining Assignment 2"
+authors = [
+    { name="Victoria Peterson" },
+    { name="Marvin Frommer" },
+    { name="Max Bohle" }
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "seaborn",
+    "scikit-learn"
+]
+
+[project.urls]
+Home = "https://github.com/VictorianHues/DataMining_Assignment2"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
