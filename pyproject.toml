@@ -12,8 +12,6 @@ authors = [
     { name="Max Bohle" }
 ]
 readme = "README.md"
-license = "MIT"
-license-files = ["LICENSE"]
 dependencies = [
     "matplotlib",
     "numpy",
