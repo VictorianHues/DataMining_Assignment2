@@ -3,7 +3,7 @@ import os
 from src.data_analysis import *
 from src.plotting import *
 
-def analyze_data(data_frame, name_extension, iqr_thresh=1.5):
+def analyze_data(data_frame, name_extension, iqr_thresh=float('inf')):
     explore_dataset(data_frame)
 
     summary_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'summary' + name_extension + '.csv')
