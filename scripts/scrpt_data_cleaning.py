@@ -36,13 +36,17 @@ def main():
     cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'prop_location_score2', iqr_thresh=1.5)
     cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'prop_log_historical_price', iqr_thresh=1.5)
     cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'price_usd', iqr_thresh=1.5)
+    cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'log_price', iqr_thresh=1.5)
     cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'srch_length_of_stay', iqr_thresh=1.5)
     cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'srch_booking_window', iqr_thresh=1.5)
     #cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'srch_adults_count', iqr_thresh=1.5)
     #cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'srch_children_count', iqr_thresh=1.5)
     #cleaned_data_frame = replace_iqr_outliers_with_na(cleaned_data_frame, 'srch_room_count', iqr_thresh=1.5)
+    
+    analyze_data(cleaned_data_frame, name_extension='dataset_clean_')
+    create_all_attribute_distributions(cleaned_data_frame, name_extension=os.path.join('clean', 'dataset_clean_'))
 
-    analyze_data(cleaned_data_frame, name_extension='training_set_VU_DM_CLEAN')
+    dataframe_to_csv(cleaned_data_frame, write_file_path)
 
 
 
