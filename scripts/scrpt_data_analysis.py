@@ -9,12 +9,10 @@ from scrpt_utils import *
 
 def main():
     read_file_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'training_set_VU_DM.csv')
-    write_file_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'training_set_VU_DM_cleaned.csv')
 
     data_frame = read_csv(read_file_path)
-    analyze_data(data_frame, name_extension='training_set_VU_DM', iqr_thresh=1.5)
-
-    
+    analyze_data(data_frame, name_extension='dataset_', iqr_thresh=1.5)
+    create_all_attribute_distributions(data_frame, name_extension=os.path.join('base', 'dataset_'))
 
 
 
