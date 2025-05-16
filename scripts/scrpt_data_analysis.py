@@ -1,6 +1,4 @@
 import os
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 from src.csv_utils_basic import *
 from src.data_analysis import *
