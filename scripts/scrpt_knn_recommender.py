@@ -3,7 +3,7 @@ from src.knn_recommender import recommend_for_all_users
 # File paths
 aggregated_data_path = 'data/aggregated_data.csv'
 full_training_data_path = 'data/training_set_VU_DM.csv'
-output_file_path = 'output/recommendations.csv'
+output_file_path = 'data/recommendations.csv'
 
 # Parameters
 K_NEIGHBORS = 5
