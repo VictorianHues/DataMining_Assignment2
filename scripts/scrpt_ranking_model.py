@@ -40,8 +40,8 @@ def GBDT_model():
     # For group information, you need to split srch_id as well
     srch_id_train = X_train['srch_id']
     srch_id_test = X_test['srch_id']
-    group_train = srch_id_train.value_counts().sort_index().to_numpy()
-    group_test = srch_id_test.value_counts().sort_index().to_numpy()
+    group_train = srch_id_train.groupby(srch_id_train).transform('size').to_numpy()
+    group_test = srch_id_test.groupby(srch_id_test).transform('size').to_numpy()
 
     # Create dataset
     lgb_train = lgb.Dataset(X_train, label=y_train, group=group_train)

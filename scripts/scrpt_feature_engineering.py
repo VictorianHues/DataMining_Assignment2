@@ -39,7 +39,7 @@ def main():
 
 
     drop_cols = [
-        'date_time', 'date_time', 'site_id', 
+        'date_time', 'site_id', 
         'visitor_location_country_id', 'visitor_hist_starrating', 'visitor_hist_adr_usd',
         #'srch_id', 'prop_id',  # Keep these separately for submission
         #'click_bool', 'booking_bool',  # Keep only if training
