@@ -58,17 +58,15 @@ mean_columns = [
     'srch_room_count'
 ]
 
-first_columns = [
-    'srch_destination_id'
-]
+
 
 # Aggregation process
 aggregated_chunks = []
 for chunk in pd.read_csv(input_file, usecols=columns, dtype=dtypes, chunksize=chunk_size):
-    processed = process_chunk(chunk, group_key, mean_columns, first_columns)
+    processed = process_chunk(chunk, group_key, mean_columns)
     aggregated_chunks.append(processed)
 
 # Finalize and save
-final_df = finalize_aggregation(aggregated_chunks, group_key, mean_columns, first_columns)
+final_df = finalize_aggregation(aggregated_chunks, group_key, mean_columns)
 final_df.to_csv(output_file, index=False)
 print(f"Successfully aggregated data to {final_df.shape[0]} rows")
