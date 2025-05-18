@@ -3,7 +3,7 @@ from src.aggregator import *
 
 # Configuration
 chunk_size = 500_000
-input_file = 'data/test_set_VU_DM.csv'
+input_file = 'data/test_set_VU_DM_engineered.csv'
 output_file = 'data/aggregated_data.csv'
 group_key = 'srch_id'
 
@@ -14,10 +14,8 @@ columns = [
     'prop_review_score',
     'prop_brand_bool',
     'prop_location_score1',
-    'prop_location_score2',
     'price_usd',
     'promotion_flag',
-    'srch_destination_id',
     'srch_length_of_stay',
     'srch_booking_window',
     'srch_adults_count',
@@ -32,10 +30,8 @@ dtypes = {
     'prop_review_score': 'float32',
     'prop_brand_bool': 'int8',
     'prop_location_score1': 'float32',
-    'prop_location_score2': 'float32',
     'price_usd': 'float32',
     'promotion_flag': 'int8',
-    'srch_destination_id': 'int32',
     'srch_length_of_stay': 'int16',
     'srch_booking_window': 'int16',
     'srch_adults_count': 'int8',
