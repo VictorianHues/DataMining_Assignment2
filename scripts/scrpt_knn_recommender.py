@@ -1,7 +1,7 @@
 from src.knn_recommender import *
 
 aggregated_file = 'data/aggregated_data.csv'
-original_file = 'data/test_set_VU_DM.csv'
+original_file = 'data/test_set_VU_DM_engineered.csv'
 k = 5
 
 recommendations_df = generate_recommendations_for_all(
