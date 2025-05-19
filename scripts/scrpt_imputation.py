@@ -39,6 +39,8 @@ def main():
     imputed_data_frame = impute_categoricals_knn(imputed_data_frame, ['prop_review_score'])
     imputed_data_frame = impute_categoricals_knn(imputed_data_frame, ['srch_length_of_stay'])
 
+    #imputed_test_data_frame = impute_categoricals_mode(imputed_test_data_frame, ['prop_review_score'])
+    #imputed_test_data_frame = impute_categoricals_mode(imputed_test_data_frame, ['srch_length_of_stay'])
     imputed_test_data_frame = impute_categoricals_knn(imputed_test_data_frame, ['prop_review_score'])
     imputed_test_data_frame = impute_categoricals_knn(imputed_test_data_frame, ['srch_length_of_stay'])
 

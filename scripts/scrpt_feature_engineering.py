@@ -20,7 +20,9 @@ def main():
     engineered_data_frame = sum_competitor_columns(engineered_data_frame)
     test_engineered_data_frame = sum_competitor_columns(test_engineered_data_frame)
 
-    
+    # Add global features
+    engineered_data_frame, test_engineered_data_frame = add_global_features(engineered_data_frame, test_engineered_data_frame)
+
     # Convert to log price
     engineered_data_frame['log_price'] = np.log1p(engineered_data_frame['price_usd'])
     test_engineered_data_frame['log_price'] = np.log1p(test_engineered_data_frame['price_usd'])
@@ -50,6 +52,14 @@ def main():
 
     #engineered_data_frame['relevance'] = engineered_data_frame['booking_bool'] * 5 + engineered_data_frame['click_bool']
 
+    engineered_data_frame['price_z'] = engineered_data_frame.groupby('srch_id')['price_usd'].transform(lambda x: (x - x.mean()) / (x.std() + 1e-5))
+    test_engineered_data_frame['price_z'] = test_engineered_data_frame.groupby('srch_id')['price_usd'].transform(lambda x: (x - x.mean()) / (x.std() + 1e-5))
+
+    engineered_data_frame['price_percentile'] = engineered_data_frame.groupby('srch_id')['price_usd'].rank(pct=True)
+    test_engineered_data_frame['price_percentile'] = test_engineered_data_frame.groupby('srch_id')['price_usd'].rank(pct=True)
+
+    engineered_data_frame['is_top3_cheapest'] = engineered_data_frame['price_rank'] <= 3
+    test_engineered_data_frame['is_top3_cheapest'] = test_engineered_data_frame['price_rank'] <= 3
 
     drop_cols = [
         'date_time', 'site_id', 
