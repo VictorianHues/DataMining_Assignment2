@@ -18,7 +18,9 @@ dependencies = [
     "pandas",
     "scipy",
     "seaborn",
-    "scikit-learn"
+    "scikit-learn",
+    "lightgbm",
+    "tensorflow"
 ]
 
 [project.urls]

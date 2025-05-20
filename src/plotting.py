@@ -13,8 +13,9 @@ def plot_distributions(dataframe, file_name=None):
         dataframe (pd.DataFrame): The dataframe containing the data to plot.
         file_name (str): The name of the file to save the plot. If None, the plot will not be saved.
     """
-    numeric_cols = dataframe.select_dtypes(include=[np.number]).columns
-    dataframe[numeric_cols].hist(bins=30, figsize=(15, 10))
+    sampled_df = dataframe.sample(frac=0.1, random_state=1)  # Sample 10% of the data for faster plotting
+    numeric_cols = sampled_df.select_dtypes(include=[np.number]).columns
+    sampled_df[numeric_cols].hist(bins=30, figsize=(15, 10))
 
     plt.suptitle("Distributions of Numerical Features")
     plt.tight_layout()
@@ -55,6 +56,7 @@ def plot_single_distribution(dataframe, column_name, title=None, xlabel=None, yl
         plt.savefig(file_path, dpi=300)
 
     #plt.show()
+    plt.close()
 
 
 def create_summary_table_visualization(dataframe, file_name=None):
