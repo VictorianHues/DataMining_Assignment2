@@ -1,25 +1,22 @@
-from src.knn_recommender import recommend_for_all_users
+from src.knn_recommender import generate_recommendations_for_all
+import pandas as pd
 
 # File paths
-aggregated_data_path = 'data/aggregated_data.csv'
-full_training_data_path = 'data/test_set_VU_DM_engineered.csv'
-output_file_path = 'output/recommendations.csv'
+AGGREGATED_DATA_PATH = 'data/aggregated_data.csv'
+ORIGINAL_DATA_PATH = 'data/test_set_VU_DM_engineered.csv'
+OUTPUT_PATH = 'output/knn_recommendations.csv'
 
 # Parameters
 K_NEIGHBORS = 5
-TOP_N = 10
-CLICK_WEIGHT = 1.0
-BOOK_WEIGHT = 4.0
-BATCH_SIZE = 1000
 
 if __name__ == "__main__":
-    recommend_for_all_users(
-        agg_path=aggregated_data_path,
-        full_data_path=full_training_data_path,
-        output_path=output_file_path,
-        k_neighbors=K_NEIGHBORS,
-        top_n=TOP_N,
-        click_weight=CLICK_WEIGHT,
-        book_weight=BOOK_WEIGHT,
-        batch_size=BATCH_SIZE
+    print("📥 Generating recommendations...")
+    recommendations = generate_recommendations_for_all(
+        aggregated_path=AGGREGATED_DATA_PATH,
+        original_path=ORIGINAL_DATA_PATH,
+        k_neighbors=K_NEIGHBORS
     )
+
+    print(f"💾 Saving to {OUTPUT_PATH}")
+    recommendations.to_csv(OUTPUT_PATH, index=False)
+    print("✅ Done.")
