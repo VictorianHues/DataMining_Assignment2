@@ -1,0 +1,2 @@
+learning_rate,num_leaves,min_data_in_leaf,drop_rate,ndcg_train,ndcg_val
+0.05,32,25,0.1,0.4325271672070149,0.48406109251266805

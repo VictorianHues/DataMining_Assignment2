@@ -5,7 +5,7 @@ from src.imputation import *
 from src.plotting import *
 from scrpt_utils import *
 
-def main():
+def impute_missing():
     read_file_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'training_set_VU_DM_cleaned.csv')
     read_test_file_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'test_set_VU_DM_cleaned.csv')
     write_file_path = os.path.join(os.path.dirname(__file__), "..", 'data', 'training_set_VU_DM_imputed.csv')
@@ -61,4 +61,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    impute_missing()
