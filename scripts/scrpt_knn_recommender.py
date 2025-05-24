@@ -1,14 +1,25 @@
-from src.knn_recommender import *
+from src.knn_recommender import recommend_for_all_users
 
-aggregated_file = 'data/aggregated_data.csv'
-original_file = 'data/test_set_VU_DM_engineered.csv'
-k = 5
+# File paths
+aggregated_data_path = 'data/aggregated_data.csv'
+full_training_data_path = 'data/test_set_VU_DM_engineered.csv'
+output_file_path = 'output/recommendations.csv'
 
-recommendations_df = generate_recommendations_for_all(
-    aggregated_path=aggregated_file,
-    original_path=original_file,
-    k_neighbors=k
-)
+# Parameters
+K_NEIGHBORS = 5
+TOP_N = 10
+CLICK_WEIGHT = 1.0
+BOOK_WEIGHT = 4.0
+BATCH_SIZE = 1000
 
-recommendations_df.to_csv("final_recommendations.csv", index=False)
-print("Saved final_recommendations.csv")
+if __name__ == "__main__":
+    recommend_for_all_users(
+        agg_path=aggregated_data_path,
+        full_data_path=full_training_data_path,
+        output_path=output_file_path,
+        k_neighbors=K_NEIGHBORS,
+        top_n=TOP_N,
+        click_weight=CLICK_WEIGHT,
+        book_weight=BOOK_WEIGHT,
+        batch_size=BATCH_SIZE
+    )
