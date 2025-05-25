@@ -4,7 +4,7 @@ import pandas as pd
 # File paths
 AGGREGATED_DATA_PATH = 'data/aggregated_data.csv'
 ORIGINAL_DATA_PATH = 'data/test_set_VU_DM_engineered.csv'
-OUTPUT_PATH = 'output/knn_recommendations.csv'
+OUTPUT_PATH = 'data/knn_recommendations.csv'
 
 # Parameters
 K_NEIGHBORS = 5
