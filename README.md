@@ -9,7 +9,7 @@ Victoria Peterson - 15476758
 2. [Usage and Installation](#usage-and-installation)
 3. [Implementation](#implementation)
 4. [Model](#model)
-5. [Feature Engineering Highlights](#feature_engineering_highlights)
+5. [Feature Engineering Highlights](#feature-engineering-highlights)
 6. [Contributing](#contributing)
 7. [License](#license)
 
