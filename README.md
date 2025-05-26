@@ -1,4 +1,4 @@
-# Data Mining Mood Data
+# Expedia Hotel Recommendation Model
 
 Victoria Peterson - 15476758
 
