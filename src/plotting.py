@@ -98,11 +98,12 @@ def create_correlation_heatmap(dataframe, file_name=None):
         dataframe (pd.DataFrame): The dataframe containing the data to visualize.
         file_name (str): The name of the file to save the plot. If None, the plot will not be saved.
     """
-    plt.figure(figsize=(24, 20))
+    plt.figure(figsize=(48, 40))
     corr = dataframe.corr()
     sns.heatmap(
         corr,
-        annot=False,
+        annot=True,  # Show correlation values in each square
+        fmt=".2f",   # Format to 2 decimal places
         cmap='coolwarm',
         square=True,
         vmin=-1.0,

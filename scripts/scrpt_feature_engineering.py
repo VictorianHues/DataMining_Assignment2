@@ -15,8 +15,8 @@ def engineer_features(df):
     df = add_hotel_performance_features(df)
     df = add_price_features(df)
     df = add_time_aggregated_features(df)
-    #df = add_country_normalized_price(df)
-    #df = add_hotel_location_normalized_price(df)
+    df = add_country_normalized_price(df)
+    df = add_hotel_location_normalized_price(df)
     
     drop_cols = [ 'date_time' ] + [col for col in df.columns if col.startswith('comp')]
     df.drop(columns=[col for col in drop_cols if col in df.columns])
@@ -43,8 +43,8 @@ def main():
 
     read_file_path = os.path.join(base_dir, "..", 'data', 'training_set_VU_DM_cleaned.csv')
     read_test_file_path = os.path.join(base_dir, "..", 'data', 'test_set_VU_DM_cleaned.csv')
-    write_file_path = os.path.join(base_dir, "..", 'data', 'training_set_VU_DM_engineered_noimpute_biased.csv')
-    write_test_file_path = os.path.join(base_dir, "..", 'data', 'test_set_VU_DM_engineered_noimpute_biased.csv')
+    write_file_path = os.path.join(base_dir, "..", 'data', 'training_set_VU_DM_engineered_noimpute.csv')
+    write_test_file_path = os.path.join(base_dir, "..", 'data', 'test_set_VU_DM_engineered_noimpute.csv')
 
     process_and_save(read_file_path, write_file_path)
     process_and_save(read_test_file_path, write_test_file_path)

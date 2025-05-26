@@ -25,7 +25,7 @@ def main():
     print(click_bool_freq)
 
 
-    create_correlation_heatmap(data_frame, file_name='correlation_heatmap.png')
+    create_correlation_heatmap(data_frame, file_name='correlation_heatmap_labeled.png')
 
     analyze_data(data_frame, name_extension='dataset_', iqr_thresh=1.5)
     create_all_attribute_distributions(data_frame, name_extension=os.path.join('base', 'dataset_'))
