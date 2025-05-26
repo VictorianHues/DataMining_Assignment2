@@ -24,7 +24,7 @@ To run the simulations and generate plots, follow these steps:
 1. Clone the repository:
 
     ```sh
-    gh repo clone VictorianHues/DataMining_Assignment2
+    gh repo clone VictorianHues/Expedia_Hotel_Recommender
     ```
 
 2. Create and activate a virtual environment:
